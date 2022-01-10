@@ -1,0 +1,18 @@
+.displayWrapper {
+  width: 100%;
+  height: 36px;
+  border: 1px solid #818086;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 8px;
+
+  font-family: monospace;
+  font-size: 18px;
+
+  border-radius: 4px;
+
+  background-color: #fff;
+}

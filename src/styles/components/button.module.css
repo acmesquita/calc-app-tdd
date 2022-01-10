@@ -1,0 +1,11 @@
+.buttonWrapper {
+  border: 1px solid #818086;
+  cursor: pointer;
+  border-radius: 4px;
+
+  width: 60px;
+  height: 36px;
+
+  font-family: monospace;
+  font-size: 14px;
+}

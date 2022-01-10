@@ -1,0 +1,15 @@
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.calculatorWrapper {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #818086;
+  padding: 0 16px;
+  border-radius: 4px;
+  background: #004888;
+}
