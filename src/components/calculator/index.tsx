@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 import {Button, Display, Row} from '../index'
 import style from '../../styles/components/calculator.module.css'
+import { Calculate } from "../../models/calculate";
+
+const MAX_LENGTH_DISPLAY = 14
 
 const Calculator: React.FC = () => {
   const [value, setValue] = useState("")
   
   function handleClick(label: string) {
-    setValue(label)
+    switch (label) {
+      case 'AC':
+        setValue('')
+        break;
+      case '=':
+        const calc = new Calculate()
+        setValue(calc.evaluate(value))
+        break;
+      default:
+        if(value.length === MAX_LENGTH_DISPLAY) return
+        setValue(old => `${old}${label}`)
+        break;
+    }    
   }
 
   return (
