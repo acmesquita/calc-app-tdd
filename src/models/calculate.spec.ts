@@ -46,4 +46,7 @@ describe('Calculate', () => {
     expect(result).toBe("0.333333333333")
     expect(result).toHaveLength(14)
   })
+
+  test.todo('Should return 3 when call evaluate with expression 1 + 1 + 1')
+  test.todo('Should return 7 when call evaluate with expression 1 + 2 * 3')
 })
