@@ -58,26 +58,44 @@ describe('Calculator', () => {
 
     expect(display).toHaveTextContent("2")
   })
+  
+  test('Should in display show 5.6 - 2 and user click in button equal', () => {
+    render(<Calculator />)
+    const btn5 = screen.getByTestId('btn-5')
+    const btn6 = screen.getByTestId('btn-6')
+    const btn2 = screen.getByTestId('btn-2')
+    const btnDot = screen.getByTestId('btn-.')
+    const btnMinus = screen.getByTestId('btn--')
+    const btnEqual = screen.getByTestId('btn-=')
+    const display = screen.getByTestId('display')
+
+    fireEvent.click(btn5)
+    fireEvent.click(btnDot)
+    fireEvent.click(btn6)
+    fireEvent.click(btnMinus)
+    fireEvent.click(btn2)
+    fireEvent.click(btnEqual)
+
+    expect(display).toHaveTextContent("3.6")
+  })
+  test.todo('Should in display show 5 * 6 and user click in button equal')
+  test.todo('Should in display show 1 / 3 and user click in button equal')
+  test.todo('Should in display show none value and user click in button dot, to be show `0.`')
+  test.todo('Should in display show 0 and user click in button .')
 
   test('Should clean display when click AC button', () => {
     render(<Calculator />)
     const btn1 = screen.getByTestId('btn-1')
     const btnAC = screen.getByTestId('btn-AC')
     const display = screen.getByTestId('display')
+    fireEvent.click(btn1)
+    fireEvent.click(btn1)
+    fireEvent.click(btn1)
+    fireEvent.click(btn1)
+    fireEvent.click(btn1)
 
-    fireEvent.click(btn1)
-    fireEvent.click(btn1)
-    fireEvent.click(btn1)
-    fireEvent.click(btn1)
-    fireEvent.click(btn1)
     fireEvent.click(btnAC)
 
     expect(display).toBeEmptyDOMElement()
   })
-
-  test.todo('Should in display show 5,6 - 2 and user click in button equal')
-  test.todo('Should in display show 5 * 6 and user click in button equal')
-  test.todo('Should in display show 1 / 3 and user click in button equal')
-  test.todo('Should in display show none value and user click in button ., to be show 0.')
-  test.todo('Should in display show 0 and user click in button .')
 })
